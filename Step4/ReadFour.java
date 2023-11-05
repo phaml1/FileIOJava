@@ -14,5 +14,17 @@ public class ReadFour
         {
             // Print out a running total of all the
             // values in the input file.
+            try{
+                Scanner fileIN = new Scanner(new File("input.txt"));
+                int sum = 0;
+                int lineIn = fileIN.nextInt();
+                while(fileIN.hasNext()){
+                    sum += lineIn;
+                    System.out.println("Running total = " + sum);
+                }
+            }
+            catch (IOException e) {
+                System.out.println("File not found");
+            }
         }
 }
